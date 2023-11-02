@@ -11,36 +11,46 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomoController {
 	
 	@Autowired
-	public EmpService service;
+	public StaService service;
 
 	@GetMapping("/getall")
-	public List<Employee> getEmployees(){
-		return service.getEmployeeList();
+	public List<Station> getStations(){
+		return service.getStationList();
 	}
 	
 	@GetMapping("/getbyid/{id}")
-	public List<Employee> getEmployeeById(@PathVariable("id")int id){
-		return service.findByEmpId(id);
+	public List<Station> getStationById(@PathVariable("id")int id){
+		return service.findByStaId(id);
 	}
 	
 	@GetMapping("/getbyname/{name}")
-	public List<Employee> getEmployeeByName(@PathVariable("name")String name){
-		return service.findByEmpName(name);
+	public List<Station> getStationByName(@PathVariable("name")String name){
+		return service.findByStaName(name);
 	}
 	
-	@GetMapping("/getbydep/{department}")
-	public List<Employee> getEmployeeByDepartment(@PathVariable("department")String department){
-		return service.findByEmpDep(department);
+	@GetMapping("/getbyday/{day}")
+	public List<Station> getStationByDay(@PathVariable("day")String day){
+		return service.findByStaDay(day);
 	}
 	
 	@GetMapping("/getbykeyword/{searchString}")
-	public List<Employee> getEmployeeBySearchString(@PathVariable("searchString")String searchString){
+	public List<Station> getStationBySearchString(@PathVariable("searchString")String searchString){
 		return service.findBySearchString(searchString);
 	}
 	
-	@GetMapping("/getbyname_and_dep/{name}/{department}")
-	public List<Employee> getEmployeeByNameAndDep(@PathVariable("name")String name,@PathVariable("department")String department){
-		return service.findByNameAndDepartment(name,department);
+	@GetMapping("/getbyname_and_end/{name}/{end}")
+	public List<Station> getEmployeeByNameAndDep(@PathVariable("name")String name,@PathVariable("end")String end){
+		return service.findByNameAndDepartment(name,end);
+	}
+	
+	@GetMapping("/getbyname_and_start/{name}/{start}")
+	public List<Station> getEmployeeByNameAndDep1(@PathVariable("name")String name,@PathVariable("start")String start){
+		return service.findByNameAndDepartment1(name,start);
+	}
+	
+	@GetMapping("/getbyname_and_start_end/{name}/{start}/{end}")
+	public List<Station> getEmployeeByNameAndDep2(@PathVariable("name")String name,@PathVariable("start")String start,@PathVariable("end")String end){
+		return service.findByNameAndDepartment2(name,start,end);
 	}
 	
 }
