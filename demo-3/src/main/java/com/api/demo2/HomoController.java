@@ -53,4 +53,9 @@ public class HomoController {
 		return service.findByNameAndDepartment2(name,start,end);
 	}
 	
+	@GetMapping("/getbyname_and_start_end_day/{name}/{start}/{end}/{day}")
+	public List<Station> getEmployeeByNameAndDep3(@PathVariable("name")String name,@PathVariable("start")String start,@PathVariable("end")String end,@PathVariable("day")String day){
+		return service.findByNameAndDepartment3(name,start,end,day);
+	}
+	
 }

@@ -12,6 +12,7 @@ public interface StaService {
 	public List<Station> findByNameAndDepartment(String name, String end);
 	public List<Station> findByNameAndDepartment1(String name, String start);
 	public List<Station> findByNameAndDepartment2(String name, String start, String end);
+	public List<Station> findByNameAndDepartment3(String name, String start, String end, String day);
 	public List<Station> saveStation(Station sta);
 	public List<Station> updateStation(Station sta);
 	public List<Station> deleteStation(Station sta);

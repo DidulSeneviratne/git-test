@@ -80,6 +80,11 @@ public class StaOprs {
 		return newList;
 	}
 	
+	public List<Station> getEmployeeByNameAndDepartment3(String name, String start, String end, String day){
+		List<Station> newList = staList.stream().filter(e->e.getStation_name().equals(name)&&e.getStart().equals(start)&&e.getEnd().equals(end)&&e.getDay().equals(day)).collect(Collectors.toList());
+		return newList;
+	}
+	
 	public List<Station> saveStation(Station sta){
 		staList.add(sta);
 		return staList;
