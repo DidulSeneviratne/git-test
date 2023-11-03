@@ -85,10 +85,10 @@ public class StaServiceImpl implements StaService{
 	}
 
 	@Override
-	public List<Station> findByNameAndDepartment3(String name, String start, String end, String day) {
+	public List<Station> findByNameAndDepartment3(String name, String end, String day) {
 		// TODO Auto-generated method stub
 		StaOprs staOprs = new StaOprs();
-		return staOprs.getEmployeeByNameAndDepartment3(name, start, end, day);
+		return staOprs.getEmployeeByNameAndDepartment3(name, end, day);
 	}
 	
 }
