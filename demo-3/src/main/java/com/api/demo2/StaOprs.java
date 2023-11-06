@@ -39,6 +39,26 @@ public class StaOprs {
 		sta2.setLeave("05.06AM");
 		staList.add(sta2);
 		
+		Station sta3 = new Station();
+		sta3.setStation_id(4);
+		sta3.setStation_name("Mount Lavinia");
+		sta3.setDay("Friday");
+		sta3.setStart("Maradana");
+		sta3.setEnd("Wadduwa");
+		sta3.setArrive("05.10AM");
+		sta3.setLeave("05.12AM");
+		staList.add(sta3);
+		
+		Station sta4 = new Station();
+		sta4.setStation_id(5);
+		sta4.setStation_name("Mount Lavinia");
+		sta4.setDay("Monday");
+		sta4.setStart("Maradana");
+		sta4.setEnd("Wadduwa");
+		sta4.setArrive("05.10PM");
+		sta4.setLeave("05.12PM");
+		staList.add(sta4);
+		
 	}
 	
 	public List<Station> getStation(){
