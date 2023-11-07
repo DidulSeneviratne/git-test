@@ -13,7 +13,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class StaOprs {
 	
-private static final String name = "H:\\data.xlsx";
+private static final String name = "src/main/resources/data.xlsx";
 	
 public static List<Station> staList = new ArrayList<Station>();
 	
