@@ -1,8 +1,8 @@
-package com.api.demo5;
+package com.api.demo2;
 
 import java.util.List;
 
-public interface StationService {
+public interface StaService {
 	
 	public List<Station> getStationList();
 	public List<Station> findByStaId(int id);
@@ -16,5 +16,5 @@ public interface StationService {
 	public List<Station> saveStation(Station sta);
 	public List<Station> updateStation(Station sta);
 	public List<Station> deleteStation(Station sta);
-
+	
 }

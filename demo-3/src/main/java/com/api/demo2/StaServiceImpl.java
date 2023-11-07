@@ -1,11 +1,11 @@
-package com.api.demo5;
+package com.api.demo2;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 @Service
-public class StationServiceImpl implements StationService {
+public class StaServiceImpl implements StaService{
 
 	@Override
 	public List<Station> getStationList() {
@@ -90,5 +90,5 @@ public class StationServiceImpl implements StationService {
 		StaOprs staOprs = new StaOprs();
 		return staOprs.getEmployeeByNameAndDepartment3(name, end, day);
 	}
-
+	
 }

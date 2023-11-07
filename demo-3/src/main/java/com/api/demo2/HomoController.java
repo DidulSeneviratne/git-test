@@ -1,4 +1,4 @@
-package com.api.demo5;
+package com.api.demo2;
 
 import java.util.List;
 
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HomeController {
+public class HomoController {
 	
 	@Autowired
-	public StationService service;
+	public StaService service;
 
 	@GetMapping("/getall")
 	public List<Station> getStations(){

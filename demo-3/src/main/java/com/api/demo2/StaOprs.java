@@ -1,4 +1,4 @@
-package com.api.demo5;
+package com.api.demo2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class StaOprs {
 	
-public List<Station> staList = new ArrayList<Station>();
+	public List<Station> staList = new ArrayList<Station>();
 	
 	public StaOprs() {
 		Station sta = new Station();
@@ -133,5 +133,4 @@ public List<Station> staList = new ArrayList<Station>();
 		staList = newList;
 		return newList;
 	}
-
 }
