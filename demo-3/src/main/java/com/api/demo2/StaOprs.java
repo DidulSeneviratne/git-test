@@ -1,15 +1,24 @@
 package com.api.demo2;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 public class StaOprs {
 	
-	public List<Station> staList = new ArrayList<Station>();
+	private static final String name = "src/main/resources/data.xlsx";
+	
+	public static List<Station> staList = new ArrayList<Station>();
 	
 	public StaOprs() {
-		Station sta = new Station();
+		/*Station sta = new Station();
 		sta.setStation_id(1);
 		sta.setStation_name("Angulana");
 		sta.setDay("Monday");
@@ -57,7 +66,63 @@ public class StaOprs {
 		sta4.setEnd("Wadduwa");
 		sta4.setArrive("05.10PM");
 		sta4.setLeave("05.12PM");
-		staList.add(sta4);
+		staList.add(sta4);*/
+		
+		try {
+			FileInputStream file = new FileInputStream(new File(name));
+			XSSFWorkbook workbook = new XSSFWorkbook(file);
+	        XSSFSheet sheet = workbook.getSheetAt(0); // Assuming the first sheet contains the station data
+
+	        for (Row row : sheet) {
+	            if (row.getRowNum() == 0) { // Skip the header row
+	                continue;
+	            }
+	            
+	            try {
+		            Station station = new Station();
+		            
+		           	station.setStation_id(row.getCell(0).getNumericCellValue());
+		           	try {
+		           		station.setStation_name(row.getCell(1).getStringCellValue());
+		           	}catch(Exception e) {
+		           		station.setStation_name("");
+		           	}
+		           	try {
+		           		station.setDay(row.getCell(2).getStringCellValue());
+		           	}catch(Exception e) {
+		           		station.setDay("");
+		           	}
+		           	try {
+		           		station.setStart(row.getCell(3).getStringCellValue());
+		           	}catch(Exception e) {
+		           		station.setStart("");
+		           	}
+		           	try {
+		           		station.setEnd(row.getCell(4).getStringCellValue());
+		           	}catch(Exception e) {
+		           		station.setEnd("");
+		           	}
+		           	try {
+		           		station.setArrive(row.getCell(5).getStringCellValue());
+		           	}catch(Exception e) {
+		           		station.setArrive("");
+		           	}
+		           	try {
+		           		station.setLeave(row.getCell(6).getStringCellValue());
+		           	}catch(Exception e) {
+		           		station.setLeave("");
+		           	}
+		            	
+		            staList.add(station);
+	            
+	            }catch(Exception e) {
+	            	break;
+	            }
+	        }
+	        workbook.close();
+	    } catch (IOException e) {
+	        System.err.println("Error reading Excel file: " + e.getMessage());
+	    }
 		
 	}
 	

@@ -1,7 +1,7 @@
 package com.api.demo2;
 
 public class Station {
-	private int Station_id;
+	private double Station_id;
 	private String Station_name;
 	private String Day;
 	private String Start;
@@ -9,10 +9,10 @@ public class Station {
 	private String Arrive;
 	private String Leave;
 	
-	public int getStation_id() {
+	public double getStation_id() {
 		return Station_id;
 	}
-	public void setStation_id(int station_id) {
+	public void setStation_id(double station_id) {
 		Station_id = station_id;
 	}
 	public String getStation_name() {
