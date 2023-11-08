@@ -1,7 +1,10 @@
 package com.api.demo2;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,21 +16,38 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class StaOprs {
 	
-	double id;
-	String name;
-	String day;
-	String start;
-	String end;
-	String arrive;
-	String leave;
-	
 	private static final String url = "src/main/resources/data.xlsx";
+	//private static final String url = "src/main/resources/out.txt";
 	
 	public static List<Station> staList = new ArrayList<Station>();
 	
 	public StaOprs() {
 		
-		/*try {
+		/*try (BufferedReader reader = new BufferedReader(new FileReader(url))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] tokens = line.split(",");
+
+                Station sta = new Station();
+                sta.setStation_id(Double.parseDouble(tokens[0]));
+                sta.setStation_name(tokens[1]);
+                sta.setDay(tokens[2]);
+                sta.setStart(tokens[3]);
+                sta.setEnd(tokens[4]);
+                sta.setArrive(tokens[5]);
+                sta.setLeave(tokens[6]);
+                staList.add(sta);
+                
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: File not found");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Error: IOException");
+            e.printStackTrace();
+        }*/
+		
+		try {
 			FileInputStream file = new FileInputStream(new File(url));
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 	        XSSFSheet sheet = workbook.getSheetAt(0); // Assuming the first sheet contains the station data
@@ -37,40 +57,42 @@ public class StaOprs {
 	                continue;
 	            }
 	            
+	            Station sta = new Station();
+	            
 	            try {
-		           	id = (row.getCell(0).getNumericCellValue());
+	            	sta.setStation_id(row.getCell(0).getNumericCellValue());
 		           	try {
-		           		name = (row.getCell(1).getStringCellValue());
+		           		sta.setStation_name(row.getCell(1).getStringCellValue());
 		           	}catch(Exception e) {
-		           		name = "";
+		           		sta.setStation_name("");
 		           	}
 		           	try {
-		           		day = (row.getCell(2).getStringCellValue());
+		           		sta.setDay(row.getCell(2).getStringCellValue());
 		           	}catch(Exception e) {
-		           		day = "";
+		           		sta.setDay("");
 		           	}
 		           	try {
-		           		start = (row.getCell(3).getStringCellValue());
+		           		sta.setStart(row.getCell(3).getStringCellValue());
 		           	}catch(Exception e) {
-		           		start = "";
+		           		sta.setStart("");
 		           	}
 		           	try {
-		           		end = (row.getCell(4).getStringCellValue());
+		           		sta.setEnd(row.getCell(4).getStringCellValue());
 		           	}catch(Exception e) {
-		           		end = "";
+		           		sta.setEnd("");
 		           	}
 		           	try {
-		           		arrive = (row.getCell(5).getStringCellValue());
+		           		sta.setArrive(row.getCell(5).getStringCellValue());
 		           	}catch(Exception e) {
-		           		arrive = "";
+		           		sta.setArrive("");
 		           	}
 		           	try {
-		           		leave = (row.getCell(6).getStringCellValue());
+		           		sta.setLeave(row.getCell(6).getStringCellValue());
 		           	}catch(Exception e) {
-		           		leave = "";
+		           		sta.setLeave("");
 		           	}
 		           	
-		           	add(id, name, day, start, end, arrive, leave);
+		           	staList.add(sta);
 	            
 	            }catch(Exception e) {
 	            	break;
@@ -79,25 +101,8 @@ public class StaOprs {
 	        workbook.close();
 	    } catch (IOException e) {
 	        System.err.println("Error reading Excel file: " + e.getMessage());
-	    }*/
-		add(1.0, "Angulana", "Monday", "Aluthgama", "Colombo Fort", "04.33AM", "04.34AM");
-		add(1.0, "Angulana", "Monday", "Aluthgama", "Colombo Fort", "05.03AM", "05.04AM");
-		add(1.0, "Angulana", "Monday", "Maradana", "Wadduwa", "05.05AM", "05.06AM");
-		add(1.0, "Angulana", "Monday", "Aluthgama", "Colombo Fort", "05.38AM", "05.39AM");
-		add(1.0, "Angulana", "Monday", "Maradana", "Kalutara South", "06.16AM", "06.17AM");
+	    }
 		
-	}
-	
-	public void add(double id, String name, String day, String start, String end, String arrive, String leave){
-		Station sta = new Station();
-		sta.setStation_id(id);
-		sta.setStation_name(name);
-		sta.setDay(day);
-		sta.setStart(start);
-		sta.setEnd(end);
-		sta.setArrive(arrive);
-		sta.setLeave(leave);
-		staList.add(sta);
 	}
 	
 	public List<Station> getStation(){
