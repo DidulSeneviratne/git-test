@@ -27,7 +27,7 @@ public class StaOprs {
 	
 	public StaOprs() {
 		
-		try {
+		/*try {
 			FileInputStream file = new FileInputStream(new File(url));
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 	        XSSFSheet sheet = workbook.getSheetAt(0); // Assuming the first sheet contains the station data
@@ -79,7 +79,13 @@ public class StaOprs {
 	        workbook.close();
 	    } catch (IOException e) {
 	        System.err.println("Error reading Excel file: " + e.getMessage());
-	    }
+	    }*/
+		
+		add(1.0, "Angulana", "Monday", "Aluthgama", "Colombo Fort", "04.33AM", "04.34AM");
+		add(2.0, "Angulana", "Monday", "Aluthgama", "Colombo Fort", "04.33AM", "04.34AM");
+		add(3.0, "Angulana", "Monday", "Aluthgama", "Colombo Fort", "04.33AM", "04.34AM");
+		add(4.0, "Angulana", "Monday", "Aluthgama", "Colombo Fort", "04.33AM", "04.34AM");
+		add(5.0, "Angulana", "Monday", "Aluthgama", "Colombo Fort", "04.33AM", "04.34AM");
 		
 	}
 	
