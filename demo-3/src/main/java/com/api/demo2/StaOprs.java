@@ -16,14 +16,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class StaOprs {
 	
-	private static final String url = "src/main/resources/data.xlsx";
-	//private static final String url = "src/main/resources/out.txt";
+	//private static final String url = "src/main/resources/data.xlsx";
+	private static final String url = "src/main/resources/out.txt";
 	
 	public static List<Station> staList = new ArrayList<Station>();
 	
 	public StaOprs() {
 		
-		/*try (BufferedReader reader = new BufferedReader(new FileReader(url))) {
+		try (BufferedReader reader = new BufferedReader(new FileReader(url))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] tokens = line.split(",");
@@ -45,9 +45,9 @@ public class StaOprs {
         } catch (IOException e) {
             System.out.println("Error: IOException");
             e.printStackTrace();
-        }*/
+        }
 		
-		try {
+		/*try {
 			FileInputStream file = new FileInputStream(new File(url));
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 	        XSSFSheet sheet = workbook.getSheetAt(0); // Assuming the first sheet contains the station data
@@ -101,7 +101,7 @@ public class StaOprs {
 	        workbook.close();
 	    } catch (IOException e) {
 	        System.err.println("Error reading Excel file: " + e.getMessage());
-	    }
+	    }*/
 		
 	}
 	
