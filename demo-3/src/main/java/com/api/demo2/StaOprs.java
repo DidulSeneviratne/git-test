@@ -11,6 +11,10 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class StaOprs {
 	
 	double id;
@@ -27,7 +31,7 @@ public class StaOprs {
 	
 	public StaOprs() {
 		
-		try {
+		/*try {
 			FileInputStream file = new FileInputStream(new File(url));
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 	        XSSFSheet sheet = workbook.getSheetAt(0); // Assuming the first sheet contains the station data
@@ -79,7 +83,12 @@ public class StaOprs {
 	        workbook.close();
 	    } catch (IOException e) {
 	        System.err.println("Error reading Excel file: " + e.getMessage());
-	    }
+	    }*/
+		add(1.0, "Angulana", "Monday", "Aluthgama", "Colombo Fort", "04.33AM", "04.34AM");
+		add(1.0, "Angulana", "Monday", "Aluthgama", "Colombo Fort", "05.03AM", "05.04AM");
+		add(1.0, "Angulana", "Monday", "Maradana", "Wadduwa", "05.05AM", "05.06AM");
+		add(1.0, "Angulana", "Monday", "Aluthgama", "Colombo Fort", "05.38AM", "05.39AM");
+		add(1.0, "Angulana", "Monday", "Maradana", "Kalutara South", "06.16AM", "06.17AM");
 		
 	}
 	
