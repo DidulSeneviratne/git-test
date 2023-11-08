@@ -18,55 +18,6 @@ public class StaOprs {
 	public static List<Station> staList = new ArrayList<Station>();
 	
 	public StaOprs() {
-		/*Station sta = new Station();
-		sta.setStation_id(1);
-		sta.setStation_name("Angulana");
-		sta.setDay("Monday");
-		sta.setStart("Aluthgama");
-		sta.setEnd("Colombo Fort");
-		sta.setArrive("04.33AM");
-		sta.setLeave("04.34AM");
-		staList.add(sta);
-		
-		Station sta1 = new Station();
-		sta1.setStation_id(2);
-		sta1.setStation_name("Panadura");
-		sta1.setDay("Monday");
-		sta1.setStart("Panadura");
-		sta1.setEnd("Colombo Fort");
-		sta1.setArrive("05.03AM");
-		sta1.setLeave("05.04AM");
-		staList.add(sta1);
-		
-		Station sta2 = new Station();
-		sta2.setStation_id(3);
-		sta2.setStation_name("Mount Lavinia");
-		sta2.setDay("Friday");
-		sta2.setStart("Maradana");
-		sta2.setEnd("Wadduwa");
-		sta2.setArrive("05.05AM");
-		sta2.setLeave("05.06AM");
-		staList.add(sta2);
-		
-		Station sta3 = new Station();
-		sta3.setStation_id(4);
-		sta3.setStation_name("Mount Lavinia");
-		sta3.setDay("Friday");
-		sta3.setStart("Maradana");
-		sta3.setEnd("Wadduwa");
-		sta3.setArrive("05.10AM");
-		sta3.setLeave("05.12AM");
-		staList.add(sta3);
-		
-		Station sta4 = new Station();
-		sta4.setStation_id(5);
-		sta4.setStation_name("Mount Lavinia");
-		sta4.setDay("Monday");
-		sta4.setStart("Maradana");
-		sta4.setEnd("Wadduwa");
-		sta4.setArrive("05.10PM");
-		sta4.setLeave("05.12PM");
-		staList.add(sta4);*/
 		
 		try {
 			FileInputStream file = new FileInputStream(new File(name));
@@ -123,6 +74,56 @@ public class StaOprs {
 	    } catch (IOException e) {
 	        System.err.println("Error reading Excel file: " + e.getMessage());
 	    }
+		
+		Station sta1 = new Station();
+		sta1.setStation_id(1);
+		sta1.setStation_name("Angulana");
+		sta1.setDay("Monday");
+		sta1.setStart("Aluthgama");
+		sta1.setEnd("Colombo Fort");
+		sta1.setArrive("04.33AM");
+		sta1.setLeave("04.34AM");
+		staList.add(sta1);
+		
+		Station sta2 = new Station();
+		sta2.setStation_id(2);
+		sta2.setStation_name("Panadura");
+		sta2.setDay("Monday");
+		sta2.setStart("Panadura");
+		sta2.setEnd("Colombo Fort");
+		sta2.setArrive("05.03AM");
+		sta2.setLeave("05.04AM");
+		staList.add(sta2);
+		
+		Station sta3 = new Station();
+		sta3.setStation_id(3);
+		sta3.setStation_name("Mount Lavinia");
+		sta3.setDay("Friday");
+		sta3.setStart("Maradana");
+		sta3.setEnd("Wadduwa");
+		sta3.setArrive("05.05AM");
+		sta3.setLeave("05.06AM");
+		staList.add(sta3);
+		
+		Station sta4 = new Station();
+		sta4.setStation_id(4);
+		sta4.setStation_name("Mount Lavinia");
+		sta4.setDay("Friday");
+		sta4.setStart("Maradana");
+		sta4.setEnd("Wadduwa");
+		sta4.setArrive("05.10AM");
+		sta4.setLeave("05.12AM");
+		staList.add(sta4);
+		
+		Station sta5 = new Station();
+		sta5.setStation_id(5);
+		sta5.setStation_name("Mount Lavinia");
+		sta5.setDay("Monday");
+		sta5.setStart("Maradana");
+		sta5.setEnd("Wadduwa");
+		sta5.setArrive("05.10PM");
+		sta5.setLeave("05.12PM");
+		staList.add(sta5);
 		
 	}
 	
