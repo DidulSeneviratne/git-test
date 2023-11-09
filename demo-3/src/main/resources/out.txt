@@ -1,2 +1,5 @@
-1.0, Angulana, Monday, Aluthgama, Colombo Fort, 04.33AM, 04.34AM
-1.0, Angulana, Monday, Aluthgama, Colombo Fort, 05.03AM, 05.04AM
+1.0,Angulana,Monday,Aluthgama,Colombo Fort,04.33AM,04.34AM
+1.0,Angulana,Monday,Aluthgama,Colombo Fort,05.03AM,05.04AM
+1.0,Angulana,Monday,Maradana,Wadduwa,05.05AM,05.06AM
+1.0,Angulana,Monday,Aluthgama,Colombo Fort,05.38AM,05.39AM
+1.0,Angulana,Monday,Maradana,Kalutara South,06.16AM,06.17AM
