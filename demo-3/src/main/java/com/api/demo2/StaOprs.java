@@ -16,6 +16,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class StaOprs {
 	
+	double id;
+	String name;
+	String day;
+	String start;
+	String end;
+	String arrive;
+	String leave;
+	
 	private static final String url = "src/main/resources/Book2.xlsx";
 	//private static final String url = "src/main/resources/out.txt";
 	
@@ -57,42 +65,40 @@ public class StaOprs {
 	                continue;
 	            }
 	            
-	            Station sta = new Station();
-	            
 	            try {
-	            	sta.setStation_id(row.getCell(0).getNumericCellValue());
+	            	id = row.getCell(0).getNumericCellValue();
 		           	try {
-		           		sta.setStation_name(row.getCell(1).getStringCellValue());
+		           		name = row.getCell(1).getStringCellValue();
 		           	}catch(Exception e) {
-		           		sta.setStation_name("");
+		           		name = "";
 		           	}
 		           	try {
-		           		sta.setDay(row.getCell(2).getStringCellValue());
+		           		day = row.getCell(2).getStringCellValue();
 		           	}catch(Exception e) {
-		           		sta.setDay("");
+		           		day = "";
 		           	}
 		           	try {
-		           		sta.setStart(row.getCell(3).getStringCellValue());
+		           		start = row.getCell(3).getStringCellValue();
 		           	}catch(Exception e) {
-		           		sta.setStart("");
+		           		start = "";
 		           	}
 		           	try {
-		           		sta.setEnd(row.getCell(4).getStringCellValue());
+		           		end = row.getCell(4).getStringCellValue();
 		           	}catch(Exception e) {
-		           		sta.setEnd("");
+		           		end = "";
 		           	}
 		           	try {
-		           		sta.setArrive(row.getCell(5).getStringCellValue());
+		           		arrive = row.getCell(5).getStringCellValue();
 		           	}catch(Exception e) {
-		           		sta.setArrive("");
+		           		arrive = "";
 		           	}
 		           	try {
-		           		sta.setLeave(row.getCell(6).getStringCellValue());
+		           		leave = row.getCell(6).getStringCellValue();
 		           	}catch(Exception e) {
-		           		sta.setLeave("");
+		           		leave = "";
 		           	}
 		           	
-		           	staList.add(sta);
+		           	add(id, name, day, start, end, arrive, leave);
 	            
 	            }catch(Exception e) {
 	            	break;
@@ -103,6 +109,18 @@ public class StaOprs {
 	        System.err.println("Error reading Excel file: " + e.getMessage());
 	    }
 		
+	}
+	
+	public void add(double id, String name, String day, String start, String end, String arrive, String leave) {
+		Station sta = new Station();
+		sta.setStation_id(id);
+		sta.setStation_name(name);
+		sta.setDay(day);
+		sta.setStart(start);
+		sta.setEnd(end);
+		sta.setArrive(arrive);
+		sta.setLeave(leave);
+		staList.add(sta);
 	}
 	
 	public List<Station> getStation(){
