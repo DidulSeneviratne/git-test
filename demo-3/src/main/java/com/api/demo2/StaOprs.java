@@ -24,7 +24,8 @@ public class StaOprs {
 	String arrive;
 	String leave;
 	
-	private static final String url = "src/main/resources/Book2.xlsx";
+	private static final String url1 = "src/main/resources/Book2.xlsx";
+	private static final String url2 = "src/main/resources/Book1.xlsx";
 	//private static final String url = "src/main/resources/out.txt";
 	
 	public static List<Station> staList = new ArrayList<Station>();
@@ -56,7 +57,7 @@ public class StaOprs {
         }*/
 		
 		try {
-			FileInputStream file = new FileInputStream(new File(url));
+			FileInputStream file = new FileInputStream(new File(url1));
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 	        XSSFSheet sheet = workbook.getSheetAt(0); // Assuming the first sheet contains the station data
 
@@ -65,6 +66,57 @@ public class StaOprs {
 	                continue;
 	            }
 	            
+	            try {
+	            	id = row.getCell(0).getNumericCellValue();
+		           	try {
+		           		name = row.getCell(1).getStringCellValue();
+		           	}catch(Exception e) {
+		           		name = "";
+		           	}
+		           	try {
+		           		day = row.getCell(2).getStringCellValue();
+		           	}catch(Exception e) {
+		           		day = "";
+		           	}
+		           	try {
+		           		start = row.getCell(3).getStringCellValue();
+		           	}catch(Exception e) {
+		           		start = "";
+		           	}
+		           	try {
+		           		end = row.getCell(4).getStringCellValue();
+		           	}catch(Exception e) {
+		           		end = "";
+		           	}
+		           	try {
+		           		arrive = row.getCell(5).getStringCellValue();
+		           	}catch(Exception e) {
+		           		arrive = "";
+		           	}
+		           	try {
+		           		leave = row.getCell(6).getStringCellValue();
+		           	}catch(Exception e) {
+		           		leave = "";
+		           	}
+		           	
+		           	add(id, name, day, start, end, arrive, leave);
+	            
+	            }catch(Exception e) {
+	            	break;
+	            }
+	        }
+	        workbook.close();
+	    } catch (IOException e) {
+	        System.err.println("Error reading Excel file: " + e.getMessage());
+	    }
+		
+		
+		try {
+			FileInputStream file = new FileInputStream(new File(url2));
+			XSSFWorkbook workbook = new XSSFWorkbook(file);
+	        XSSFSheet sheet = workbook.getSheetAt(0); // Assuming the first sheet contains the station data
+
+	        for (Row row : sheet) {
 	            try {
 	            	id = row.getCell(0).getNumericCellValue();
 		           	try {
