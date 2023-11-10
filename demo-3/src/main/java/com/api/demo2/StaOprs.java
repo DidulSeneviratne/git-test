@@ -24,10 +24,10 @@ public class StaOprs {
 	String arrive;
 	String leave;
 	
-	private static final String url1 = "src/main/resources/Book2.xlsx";
-	private static final String url2 = "src/main/resources/Book1.xlsx";
+	//private static final String url1 = "src/main/resources/Book2.xlsx";
+	//private static final String url2 = "src/main/resources/Book1.xlsx";
 	private static final String url3 = "src/main/resources/Book3.xlsx";
-	private static final String url4 = "src/main/resources/Book4.xlsx";
+	//private static final String url4 = "src/main/resources/Book4.xlsx";
 	//private static final String url = "src/main/resources/out.txt";
 	
 	public static List<Station> staList = new ArrayList<Station>();
@@ -58,7 +58,7 @@ public class StaOprs {
             e.printStackTrace();
         }*/
 		
-		try {
+		/*try {
 			FileInputStream file = new FileInputStream(new File(url1));
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 	        XSSFSheet sheet = workbook.getSheetAt(0); // Assuming the first sheet contains the station data
@@ -161,8 +161,7 @@ public class StaOprs {
 	        workbook.close();
 	    } catch (IOException e) {
 	        System.err.println("Error reading Excel file: " + e.getMessage());
-	    }
-		
+	    }*/
 		
 		try {
 			FileInputStream file = new FileInputStream(new File(url3));
@@ -214,8 +213,7 @@ public class StaOprs {
 	        System.err.println("Error reading Excel file: " + e.getMessage());
 	    }
 		
-		
-		try {
+		/*try {
 			FileInputStream file = new FileInputStream(new File(url4));
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 	        XSSFSheet sheet = workbook.getSheetAt(0); // Assuming the first sheet contains the station data
@@ -263,7 +261,7 @@ public class StaOprs {
 	        workbook.close();
 	    } catch (IOException e) {
 	        System.err.println("Error reading Excel file: " + e.getMessage());
-	    }
+	    }*/
 		
 	}
 	
